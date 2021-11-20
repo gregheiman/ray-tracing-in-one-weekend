@@ -24,8 +24,8 @@ SYSTEMINCLUDES =
 default: ray_tracer
 
 # Create executable file
-ray_tracer: lib/main.o lib/vec3.o lib/color.o
-	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(SYSTEMINCLUDES) -o ray_tracer lib/main.o lib/vec3.o lib/color.o
+ray_tracer: lib/main.o lib/vec3.o lib/color.o lib/ray.o
+	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(SYSTEMINCLUDES) -o ray_tracer lib/main.o lib/vec3.o lib/color.o lib/ray.o
 
 # Create the individual objects
 lib/main.o:
@@ -36,6 +36,9 @@ lib/vec3.o:
 
 lib/color.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c src/color.cpp -o lib/color.o
+
+lib/ray.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c src/ray.cpp -o lib/ray.o
 
 # Run with make clean. Removes all object files
 clean:
