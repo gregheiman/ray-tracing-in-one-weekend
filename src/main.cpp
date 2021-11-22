@@ -5,6 +5,26 @@
 #include <iostream>
 
 /*
+ * Test whether a ray hits a sphere. If so return true.
+ * Used to draw a sphere on the screen.
+ * center - the xyz coord. at center of sphere
+ * radius - the radius of there sphere
+ * ray - the ray to test
+ * Return - True if the ray hit the sphere at that pixel. False otherwise.
+ */
+bool hit_sphere(const point3& center, double_t radius, const ray& r)
+{
+    vec3 oc = r.origin() - center;
+    auto a = dot(r.direction(), r.direction());
+    auto b = 2.0 * dot(oc, r.direction());
+    auto c = dot(oc, oc) - radius * radius;
+
+    // The part of the quad. equation under square root
+    auto discriminant = b * b - 4 * a * c;
+    return (discriminant > 0);
+}
+
+/*
  * Linerarly blends white and blue depending on height of the y coordinate after
  * scaling the ray direction to unit length (-1.0 < y < 1.0).
  *
@@ -15,6 +35,10 @@
  */
 color ray_color(const ray& r)
 {
+    if (hit_sphere(point3(0,0,-1), 0.5, r))
+    {
+        return color(1, 0, 0);
+    }
     vec3 unit_direction = unit_vector(r.direction());
     auto t = 0.5 * (unit_direction.y() + 1.0);
 
