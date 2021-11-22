@@ -16,8 +16,8 @@ This program is built and tested only on Linux (Fedora 34). As such can not guar
 1. Clone the project to your computer
 2. Navigate into the `/build` directory inside of the project
 3. Run the following command: `cmake ../src`
-  - This will create the build files for your system
+   - This will create the build files for your system
 4. Build the project executable inside of the `/build` directory
    - On Linux systems this can be done with the command: `make`
 5. Run the project with the following command in the `/build` directory: `ray_tracer` 
-  - If you would like to pipe the programs output to a file simply use the following command on Linux systems: `ray_tracer > image.ppm`
+   - If you would like to pipe the programs output to a file simply use the following command on Linux systems: `ray_tracer > image.ppm`
