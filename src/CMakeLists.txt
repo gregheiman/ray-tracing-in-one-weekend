@@ -11,6 +11,8 @@ add_library(Color color.cpp)
 
 add_executable(ray_tracer main.cpp)
 
+target_include_directories(ray_tracer PUBLIC include)
+
 target_link_libraries(ray_tracer PUBLIC Vec3)
 target_link_libraries(ray_tracer PUBLIC Ray)
 target_link_libraries(ray_tracer PUBLIC Color)
