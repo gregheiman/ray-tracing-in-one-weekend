@@ -1,4 +1,4 @@
-#include "include/vec3.h"
+#include "include/vec3.hpp"
 
 using std::sqrt;
 

@@ -1,4 +1,4 @@
-#include "include/ray.h"
+#include "include/ray.hpp"
 
 point3 ray::origin() const
 {

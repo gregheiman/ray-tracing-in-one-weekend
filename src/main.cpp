@@ -1,46 +1,41 @@
-#include "include/vec3.h"
-#include "include/color.h"
-#include "include/ray.h"
+#include "include/vec3.hpp"
+#include "include/color.hpp"
+#include "include/ray.hpp"
 
 #include <iostream>
 
-/*
- * Test whether a ray hits a sphere. If so return true.
- * Used to draw a sphere on the screen.
- * center - the xyz coord. at center of sphere
- * radius - the radius of there sphere
- * ray - the ray to test
- * Return - True if the ray hit the sphere at that pixel. False otherwise.
- */
-bool hit_sphere(const point3& center, double_t radius, const ray& r)
+double hit_sphere(const point3& center, double_t radius, const ray& r)
 {
     vec3 oc = r.origin() - center;
-    auto a = dot(r.direction(), r.direction());
-    auto b = 2.0 * dot(oc, r.direction());
-    auto c = dot(oc, oc) - radius * radius;
+    auto a = r.direction().length_squared();
+    auto half_b = dot(oc, r.direction());
+    auto c = oc.length_squared() - radius*radius;
 
     // The part of the quad. equation under square root
-    auto discriminant = b * b - 4 * a * c;
-    return (discriminant > 0);
+    auto discriminant = half_b*half_b - a*c;
+
+    if (discriminant < 0)
+    {
+        return -1.0;
+    }
+    else
+    {
+        // Finish the quadratic equation
+        return (-half_b - sqrt(discriminant)) / a;
+    }
 }
 
-/*
- * Linerarly blends white and blue depending on height of the y coordinate after
- * scaling the ray direction to unit length (-1.0 < y < 1.0).
- *
- * Beacuse we're looking at the y height after normalizing the vector there is a
- * horizontal gradient as well as a vertical gradient.
- *
- * Created linear blend using formula: blendedValue = (1 - t) * startValue + t * endValue
- */
 color ray_color(const ray& r)
 {
-    if (hit_sphere(point3(0,0,-1), 0.5, r))
+    auto t = hit_sphere(point3(0,0,-1), 0.5, r);
+    if (t > 0.0)
     {
-        return color(1, 0, 0);
+        vec3 N = unit_vector(r.at(t) - vec3(0,0,-1));
+        return (0.5 * color(N.x()+1, N.y()+1, N.z()+1));
     }
+
     vec3 unit_direction = unit_vector(r.direction());
-    auto t = 0.5 * (unit_direction.y() + 1.0);
+    t = 0.5 * (unit_direction.y() + 1.0);
 
     return (1.0 - t) * color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
 }
