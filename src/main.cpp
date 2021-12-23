@@ -25,9 +25,18 @@ double hit_sphere(const point3& center, double_t radius, const ray& r)
     }
 }
 
+/*
+ * Simply calculated the color of the ray upon hitting the sphere. Uses surface normals
+ * in order to determine the color of the ray.
+ * r - A ray being cast from a camera
+ * Return - A color in RGB format that will be transformed into ppm format.
+ */
 color ray_color(const ray& r)
 {
     auto t = hit_sphere(point3(0,0,-1), 0.5, r);
+    // If we recieve a postivie solution from hit_sphere than there are
+    // two possible real answers. This is used to return a single color
+    // from the two possible answers.
     if (t > 0.0)
     {
         vec3 N = unit_vector(r.at(t) - vec3(0,0,-1));

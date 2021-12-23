@@ -1,4 +1,5 @@
 #include "include/vec3.hpp"
+#include <cmath>
 
 using std::sqrt;
 
