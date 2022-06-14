@@ -12,7 +12,7 @@ class ray
     point3 origin() const;
 
     vec3 direction() const;
-    
+
     point3 at(double_t t) const;
 
  private:

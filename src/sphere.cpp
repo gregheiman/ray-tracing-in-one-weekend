@@ -1,4 +1,4 @@
-#include "include/sphere.hpp"
+#include "../include/sphere.hpp"
 
 bool sphere::hit(const ray& r, double_t t_min, double_t t_max, hit_record& rec) const
 {

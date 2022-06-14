@@ -6,8 +6,13 @@
 
 class vec3 {
 public:
-    vec3() : e{0, 0, 0} {}
-    vec3(double_t e0, double_t e1, double_t e2) : e{e0, e1, e2} {}
+    vec3() = default;
+    vec3(double_t e0, double_t e1, double_t e2)
+    {
+        e[0] = e0;
+        e[1] = e1;
+        e[2] = e2;
+    }
 
     double_t x() const;
 
@@ -32,7 +37,7 @@ public:
     double_t length_squared() const;
 
 private:
-     double_t e[3];
+    double_t e[3] = {0, 0, 0};
 };
 
 // Type aliases for vec3

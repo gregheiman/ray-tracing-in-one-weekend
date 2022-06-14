@@ -1,4 +1,4 @@
-#include "include/color.hpp"
+#include "../include/color.hpp"
 
 void write_color(std::ostream &out, color pixel_color)
 {
