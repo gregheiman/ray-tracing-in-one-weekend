@@ -5,6 +5,6 @@
 
 #include <ostream>
 
-void write_color(std::ostream &out, color pixel_color);
+void write_color(std::ostream &out, color pixel_color, int samples_per_pixel);
 
 #endif

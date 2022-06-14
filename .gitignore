@@ -12,3 +12,5 @@
 ray_tracer
 
 compile_commands.json
+
+*.ppm
