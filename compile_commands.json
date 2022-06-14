@@ -1,0 +1,92 @@
+[
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/ray.o",
+      "src/ray.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/ray.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/ray.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/vec3.o",
+      "src/vec3.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/vec3.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/vec3.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/hittable_list.o",
+      "src/hittable_list.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/hittable_list.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/hittable_list.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/color.o",
+      "src/color.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/color.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/color.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/sphere.o",
+      "src/sphere.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/sphere.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/sphere.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-c",
+      "-O3",
+      "-std=c++17",
+      "-I./include",
+      "-o",
+      "obj/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/Users/heimangreg/dev/rayTracingInOneWeekend",
+    "file": "/Users/heimangreg/dev/rayTracingInOneWeekend/src/main.cpp",
+    "output": "/Users/heimangreg/dev/rayTracingInOneWeekend/obj/main.o"
+  }
+]
